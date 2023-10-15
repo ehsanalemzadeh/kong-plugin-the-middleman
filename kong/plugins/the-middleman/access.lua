@@ -64,6 +64,7 @@ local function external_request(conf, version)
       ["X-Forwarded-Host"] = kong.request.get_host(),
       ["X-Forwarded-Path"] = kong.request.get_path(),
       ["X-Forwarded-Query"] = kong.request.get_query(),
+      ["Authorization"] = kong.request.get_headers()["Authorization"]
     }
   })
 
